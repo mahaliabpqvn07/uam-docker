@@ -1,0 +1,19 @@
+version: '3.3'
+
+services:
+  uam_1:
+    image: tuanna9414/uam:latest
+    container_name: uam_1
+    restart: always
+    environment:
+      - WALLET=${PBKEY}
+    cap_add:
+      - IPC_LOCK
+  uam_2:
+    image: tuanna9414/uam:latest
+    container_name: uam_2
+    restart: always
+    environment:
+      - WALLET=${PBKEY}
+    cap_add:
+      - IPC_LOCK

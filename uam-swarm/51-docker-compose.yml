@@ -1,0 +1,1338 @@
+version: '2.2'
+
+services:
+  uam_1:
+    image: debian:bullseye-slim
+    container_name: uam_1
+    hostname: uam_1
+    restart: always
+    stop_grace_period: 5s
+    cap_add:
+      - NET_ADMIN
+    ulimits:
+      rtprio: 95
+      memlock: -1
+    oom_score_adj: -700
+    mem_swappiness: 10
+    tmpfs:
+      - /root/.uam:size=500m
+    volumes:
+      - "./entrypoint.sh:/opt/entrypoint.sh"
+    command: /bin/sh -c "chmod +x /opt/entrypoint.sh && /opt/entrypoint.sh $${PBKEY} $${PPORT} $${NETLIMUP} $${NETLIMDOWN}"
+    ports:
+      - "127.0.0.1:17100:17099"
+      - "4160:4160"
+    environment:
+      - PBKEY=${PBKEY}
+      - PPORT=4160
+      - NETLIMUP=10000
+      - NETLIMDOWN=18000
+
+  uam_2:
+    image: debian:bullseye-slim
+    container_name: uam_2
+    hostname: uam_2
+    restart: always
+    stop_grace_period: 5s
+    cap_add:
+      - NET_ADMIN
+    ulimits:
+      rtprio: 95
+      memlock: -1
+    oom_score_adj: -700
+    mem_swappiness: 10
+    tmpfs:
+      - /root/.uam:size=500m
+    volumes:
+      - "./entrypoint.sh:/opt/entrypoint.sh"
+    command: /bin/sh -c "chmod +x /opt/entrypoint.sh && /opt/entrypoint.sh $${PBKEY} $${PPORT} $${NETLIMUP} $${NETLIMDOWN}"
+    ports:
+      - "127.0.0.1:17101:17099"
+      - "4161:4161"
+    environment:
+      - PBKEY=${PBKEY}
+      - PPORT=4161
+      - NETLIMUP=10000
+      - NETLIMDOWN=18000
+
+  uam_3:
+    image: debian:bullseye-slim
+    container_name: uam_3
+    hostname: uam_3
+    restart: always
+    stop_grace_period: 5s
+    cap_add:
+      - NET_ADMIN
+    ulimits:
+      rtprio: 95
+      memlock: -1
+    oom_score_adj: -700
+    mem_swappiness: 10
+    tmpfs:
+      - /root/.uam:size=500m
+    volumes:
+      - "./entrypoint.sh:/opt/entrypoint.sh"
+    command: /bin/sh -c "chmod +x /opt/entrypoint.sh && /opt/entrypoint.sh $${PBKEY} $${PPORT} $${NETLIMUP} $${NETLIMDOWN}"
+    ports:
+      - "127.0.0.1:17102:17099"
+      - "4162:4162"
+    environment:
+      - PBKEY=${PBKEY}
+      - PPORT=4162
+      - NETLIMUP=10000
+      - NETLIMDOWN=18000
+
+  uam_4:
+    image: debian:bullseye-slim
+    container_name: uam_4
+    hostname: uam_4
+    restart: always
+    stop_grace_period: 5s
+    cap_add:
+      - NET_ADMIN
+    ulimits:
+      rtprio: 95
+      memlock: -1
+    oom_score_adj: -700
+    mem_swappiness: 10
+    tmpfs:
+      - /root/.uam:size=500m
+    volumes:
+      - "./entrypoint.sh:/opt/entrypoint.sh"
+    command: /bin/sh -c "chmod +x /opt/entrypoint.sh && /opt/entrypoint.sh $${PBKEY} $${PPORT} $${NETLIMUP} $${NETLIMDOWN}"
+    ports:
+      - "127.0.0.1:17103:17099"
+      - "4163:4163"
+    environment:
+      - PBKEY=${PBKEY}
+      - PPORT=4163
+      - NETLIMUP=10000
+      - NETLIMDOWN=18000
+
+  uam_5:
+    image: debian:bullseye-slim
+    container_name: uam_5
+    hostname: uam_5
+    restart: always
+    stop_grace_period: 5s
+    cap_add:
+      - NET_ADMIN
+    ulimits:
+      rtprio: 95
+      memlock: -1
+    oom_score_adj: -700
+    mem_swappiness: 10
+    tmpfs:
+      - /root/.uam:size=500m
+    volumes:
+      - "./entrypoint.sh:/opt/entrypoint.sh"
+    command: /bin/sh -c "chmod +x /opt/entrypoint.sh && /opt/entrypoint.sh $${PBKEY} $${PPORT} $${NETLIMUP} $${NETLIMDOWN}"
+    ports:
+      - "127.0.0.1:17104:17099"
+      - "4164:4164"
+    environment:
+      - PBKEY=${PBKEY}
+      - PPORT=4164
+      - NETLIMUP=10000
+      - NETLIMDOWN=18000
+
+  uam_6:
+    image: debian:bullseye-slim
+    container_name: uam_6
+    hostname: uam_6
+    restart: always
+    stop_grace_period: 5s
+    cap_add:
+      - NET_ADMIN
+    ulimits:
+      rtprio: 95
+      memlock: -1
+    oom_score_adj: -700
+    mem_swappiness: 10
+    tmpfs:
+      - /root/.uam:size=500m
+    volumes:
+      - "./entrypoint.sh:/opt/entrypoint.sh"
+    command: /bin/sh -c "chmod +x /opt/entrypoint.sh && /opt/entrypoint.sh $${PBKEY} $${PPORT} $${NETLIMUP} $${NETLIMDOWN}"
+    ports:
+      - "127.0.0.1:17105:17099"
+      - "4165:4165"
+    environment:
+      - PBKEY=${PBKEY}
+      - PPORT=4165
+      - NETLIMUP=10000
+      - NETLIMDOWN=18000
+
+  uam_7:
+    image: debian:bullseye-slim
+    container_name: uam_7
+    hostname: uam_7
+    restart: always
+    stop_grace_period: 5s
+    cap_add:
+      - NET_ADMIN
+    ulimits:
+      rtprio: 95
+      memlock: -1
+    oom_score_adj: -700
+    mem_swappiness: 10
+    tmpfs:
+      - /root/.uam:size=500m
+    volumes:
+      - "./entrypoint.sh:/opt/entrypoint.sh"
+    command: /bin/sh -c "chmod +x /opt/entrypoint.sh && /opt/entrypoint.sh $${PBKEY} $${PPORT} $${NETLIMUP} $${NETLIMDOWN}"
+    ports:
+      - "127.0.0.1:17106:17099"
+      - "4166:4166"
+    environment:
+      - PBKEY=${PBKEY}
+      - PPORT=4166
+      - NETLIMUP=10000
+      - NETLIMDOWN=18000
+
+  uam_8:
+    image: debian:bullseye-slim
+    container_name: uam_8
+    hostname: uam_8
+    restart: always
+    stop_grace_period: 5s
+    cap_add:
+      - NET_ADMIN
+    ulimits:
+      rtprio: 95
+      memlock: -1
+    oom_score_adj: -700
+    mem_swappiness: 10
+    tmpfs:
+      - /root/.uam:size=500m
+    volumes:
+      - "./entrypoint.sh:/opt/entrypoint.sh"
+    command: /bin/sh -c "chmod +x /opt/entrypoint.sh && /opt/entrypoint.sh $${PBKEY} $${PPORT} $${NETLIMUP} $${NETLIMDOWN}"
+    ports:
+      - "127.0.0.1:17107:17099"
+      - "4167:4167"
+    environment:
+      - PBKEY=${PBKEY}
+      - PPORT=4167
+      - NETLIMUP=10000
+      - NETLIMDOWN=18000
+
+  uam_9:
+    image: debian:bullseye-slim
+    container_name: uam_9
+    hostname: uam_9
+    restart: always
+    stop_grace_period: 5s
+    cap_add:
+      - NET_ADMIN
+    ulimits:
+      rtprio: 95
+      memlock: -1
+    oom_score_adj: -700
+    mem_swappiness: 10
+    tmpfs:
+      - /root/.uam:size=500m
+    volumes:
+      - "./entrypoint.sh:/opt/entrypoint.sh"
+    command: /bin/sh -c "chmod +x /opt/entrypoint.sh && /opt/entrypoint.sh $${PBKEY} $${PPORT} $${NETLIMUP} $${NETLIMDOWN}"
+    ports:
+      - "127.0.0.1:17108:17099"
+      - "4168:4168"
+    environment:
+      - PBKEY=${PBKEY}
+      - PPORT=4168
+      - NETLIMUP=10000
+      - NETLIMDOWN=18000
+  uam_10:
+    image: debian:bullseye-slim
+    container_name: uam_10
+    hostname: uam_10
+    restart: always
+    stop_grace_period: 5s
+    cap_add:
+      - NET_ADMIN
+    ulimits:
+      rtprio: 95
+      memlock: -1
+    oom_score_adj: -700
+    mem_swappiness: 10
+    tmpfs:
+      - /root/.uam:size=500m
+    volumes:
+      - "./entrypoint.sh:/opt/entrypoint.sh"
+    command: /bin/sh -c "chmod +x /opt/entrypoint.sh && /opt/entrypoint.sh $${PBKEY} $${PPORT} $${NETLIMUP} $${NETLIMDOWN}"
+    ports:
+      - "127.0.0.1:17109:17099"
+      - "4169:4169"
+    environment:
+      - PBKEY=${PBKEY}
+      - PPORT=4169
+      - NETLIMUP=10000
+      - NETLIMDOWN=18000
+  
+  uam_11:
+    image: debian:bullseye-slim
+    container_name: uam_11
+    hostname: uam_11
+    restart: always
+    stop_grace_period: 5s
+    cap_add:
+      - NET_ADMIN
+    ulimits:
+      rtprio: 95
+      memlock: -1
+    oom_score_adj: -700
+    mem_swappiness: 10
+    tmpfs:
+      - /root/.uam:size=500m
+    volumes:
+      - "./entrypoint.sh:/opt/entrypoint.sh"
+    command: /bin/sh -c "chmod +x /opt/entrypoint.sh && /opt/entrypoint.sh $${PBKEY} $${PPORT} $${NETLIMUP} $${NETLIMDOWN}"
+    ports:
+      - "127.0.0.1:17110:17099"
+      - "4170:4170"
+    environment:
+      - PBKEY=${PBKEY}
+      - PPORT=4170
+      - NETLIMUP=10000
+      - NETLIMDOWN=18000
+  uam_12:
+    image: debian:bullseye-slim
+    container_name: uam_12
+    hostname: uam_12
+    restart: always
+    stop_grace_period: 5s
+    cap_add:
+      - NET_ADMIN
+    ulimits:
+      rtprio: 95
+      memlock: -1
+    oom_score_adj: -700
+    mem_swappiness: 10
+    tmpfs:
+      - /root/.uam:size=500m
+    volumes:
+      - "./entrypoint.sh:/opt/entrypoint.sh"
+    command: /bin/sh -c "chmod +x /opt/entrypoint.sh && /opt/entrypoint.sh $${PBKEY} $${PPORT} $${NETLIMUP} $${NETLIMDOWN}"
+    ports:
+      - "127.0.0.1:17111:17099"
+      - "4171:4171"
+    environment:
+      - PBKEY=${PBKEY}
+      - PPORT=4171
+      - NETLIMUP=10000
+      - NETLIMDOWN=18000
+  uam_13:
+    image: debian:bullseye-slim
+    container_name: uam_13
+    hostname: uam_13
+    restart: always
+    stop_grace_period: 5s
+    cap_add:
+      - NET_ADMIN
+    ulimits:
+      rtprio: 95
+      memlock: -1
+    oom_score_adj: -700
+    mem_swappiness: 10
+    tmpfs:
+      - /root/.uam:size=500m
+    volumes:
+      - "./entrypoint.sh:/opt/entrypoint.sh"
+    command: /bin/sh -c "chmod +x /opt/entrypoint.sh && /opt/entrypoint.sh $${PBKEY} $${PPORT} $${NETLIMUP} $${NETLIMDOWN}"
+    ports:
+      - "127.0.0.1:17112:17099"
+      - "4172:4172"
+    environment:
+      - PBKEY=${PBKEY}
+      - PPORT=4172
+      - NETLIMUP=10000
+      - NETLIMDOWN=18000
+  uam_14:
+    image: debian:bullseye-slim
+    container_name: uam_14
+    hostname: uam_14
+    restart: always
+    stop_grace_period: 5s
+    cap_add:
+      - NET_ADMIN
+    ulimits:
+      rtprio: 95
+      memlock: -1
+    oom_score_adj: -700
+    mem_swappiness: 10
+    tmpfs:
+      - /root/.uam:size=500m
+    volumes:
+      - "./entrypoint.sh:/opt/entrypoint.sh"
+    command: /bin/sh -c "chmod +x /opt/entrypoint.sh && /opt/entrypoint.sh $${PBKEY} $${PPORT} $${NETLIMUP} $${NETLIMDOWN}"
+    ports:
+      - "127.0.0.1:17113:17099"
+      - "4173:4173"
+    environment:
+      - PBKEY=${PBKEY}
+      - PPORT=4173
+      - NETLIMUP=10000
+      - NETLIMDOWN=18000
+  uam_15:
+    image: debian:bullseye-slim
+    container_name: uam_15
+    hostname: uam_15
+    restart: always
+    stop_grace_period: 5s
+    cap_add:
+      - NET_ADMIN
+    ulimits:
+      rtprio: 95
+      memlock: -1
+    oom_score_adj: -700
+    mem_swappiness: 10
+    tmpfs:
+      - /root/.uam:size=500m
+    volumes:
+      - "./entrypoint.sh:/opt/entrypoint.sh"
+    command: /bin/sh -c "chmod +x /opt/entrypoint.sh && /opt/entrypoint.sh $${PBKEY} $${PPORT} $${NETLIMUP} $${NETLIMDOWN}"
+    ports:
+      - "127.0.0.1:17114:17099"
+      - "4174:4174"
+    environment:
+      - PBKEY=${PBKEY}
+      - PPORT=4174
+      - NETLIMUP=10000
+      - NETLIMDOWN=18000
+  uam_16:
+    image: debian:bullseye-slim
+    container_name: uam_16
+    hostname: uam_16
+    restart: always
+    stop_grace_period: 5s
+    cap_add:
+      - NET_ADMIN
+    ulimits:
+      rtprio: 95
+      memlock: -1
+    oom_score_adj: -700
+    mem_swappiness: 10
+    tmpfs:
+      - /root/.uam:size=500m
+    volumes:
+      - "./entrypoint.sh:/opt/entrypoint.sh"
+    command: /bin/sh -c "chmod +x /opt/entrypoint.sh && /opt/entrypoint.sh $${PBKEY} $${PPORT} $${NETLIMUP} $${NETLIMDOWN}"
+    ports:
+      - "127.0.0.1:17115:17099"
+      - "4175:4175"
+    environment:
+      - PBKEY=${PBKEY}
+      - PPORT=4175
+      - NETLIMUP=10000
+      - NETLIMDOWN=18000
+  uam_17:
+    image: debian:bullseye-slim
+    container_name: uam_17
+    hostname: uam_17
+    restart: always
+    stop_grace_period: 5s
+    cap_add:
+      - NET_ADMIN
+    ulimits:
+      rtprio: 95
+      memlock: -1
+    oom_score_adj: -700
+    mem_swappiness: 10
+    tmpfs:
+      - /root/.uam:size=500m
+    volumes:
+      - "./entrypoint.sh:/opt/entrypoint.sh"
+    command: /bin/sh -c "chmod +x /opt/entrypoint.sh && /opt/entrypoint.sh $${PBKEY} $${PPORT} $${NETLIMUP} $${NETLIMDOWN}"
+    ports:
+      - "127.0.0.1:17116:17099"
+      - "4176:4176"
+    environment:
+      - PBKEY=${PBKEY}
+      - PPORT=4176
+      - NETLIMUP=10000
+      - NETLIMDOWN=18000
+  uam_18:
+    image: debian:bullseye-slim
+    container_name: uam_18
+    hostname: uam_18
+    restart: always
+    stop_grace_period: 5s
+    cap_add:
+      - NET_ADMIN
+    ulimits:
+      rtprio: 95
+      memlock: -1
+    oom_score_adj: -700
+    mem_swappiness: 10
+    tmpfs:
+      - /root/.uam:size=500m
+    volumes:
+      - "./entrypoint.sh:/opt/entrypoint.sh"
+    command: /bin/sh -c "chmod +x /opt/entrypoint.sh && /opt/entrypoint.sh $${PBKEY} $${PPORT} $${NETLIMUP} $${NETLIMDOWN}"
+    ports:
+      - "127.0.0.1:17117:17099"
+      - "4177:4177"
+    environment:
+      - PBKEY=${PBKEY}
+      - PPORT=4177
+      - NETLIMUP=10000
+      - NETLIMDOWN=18000
+  uam_19:
+    image: debian:bullseye-slim
+    container_name: uam_19
+    hostname: uam_19
+    restart: always
+    stop_grace_period: 5s
+    cap_add:
+      - NET_ADMIN
+    ulimits:
+      rtprio: 95
+      memlock: -1
+    oom_score_adj: -700
+    mem_swappiness: 10
+    tmpfs:
+      - /root/.uam:size=500m
+    volumes:
+      - "./entrypoint.sh:/opt/entrypoint.sh"
+    command: /bin/sh -c "chmod +x /opt/entrypoint.sh && /opt/entrypoint.sh $${PBKEY} $${PPORT} $${NETLIMUP} $${NETLIMDOWN}"
+    ports:
+      - "127.0.0.1:17118:17099"
+      - "4178:4178"
+    environment:
+      - PBKEY=${PBKEY}
+      - PPORT=4178
+      - NETLIMUP=10000
+      - NETLIMDOWN=18000
+  uam_20:
+    image: debian:bullseye-slim
+    container_name: uam_20
+    hostname: uam_20
+    restart: always
+    stop_grace_period: 5s
+    cap_add:
+      - NET_ADMIN
+    ulimits:
+      rtprio: 95
+      memlock: -1
+    oom_score_adj: -700
+    mem_swappiness: 10
+    tmpfs:
+      - /root/.uam:size=500m
+    volumes:
+      - "./entrypoint.sh:/opt/entrypoint.sh"
+    command: /bin/sh -c "chmod +x /opt/entrypoint.sh && /opt/entrypoint.sh $${PBKEY} $${PPORT} $${NETLIMUP} $${NETLIMDOWN}"
+    ports:
+      - "127.0.0.1:17119:17099"
+      - "4179:4179"
+    environment:
+      - PBKEY=${PBKEY}
+      - PPORT=4179
+      - NETLIMUP=10000
+      - NETLIMDOWN=18000
+  uam_21:
+    image: debian:bullseye-slim
+    container_name: uam_21
+    hostname: uam_21
+    restart: always
+    stop_grace_period: 5s
+    cap_add:
+      - NET_ADMIN
+    ulimits:
+      rtprio: 95
+      memlock: -1
+    oom_score_adj: -700
+    mem_swappiness: 10
+    tmpfs:
+      - /root/.uam:size=500m
+    volumes:
+      - "./entrypoint.sh:/opt/entrypoint.sh"
+    command: /bin/sh -c "chmod +x /opt/entrypoint.sh && /opt/entrypoint.sh $${PBKEY} $${PPORT} $${NETLIMUP} $${NETLIMDOWN}"
+    ports:
+      - "127.0.0.1:17120:17099"
+      - "4180:4180"
+    environment:
+      - PBKEY=${PBKEY}
+      - PPORT=4180
+      - NETLIMUP=10000
+      - NETLIMDOWN=18000
+  uam_22:
+    image: debian:bullseye-slim
+    container_name: uam_22
+    hostname: uam_22
+    restart: always
+    stop_grace_period: 5s
+    cap_add:
+      - NET_ADMIN
+    ulimits:
+      rtprio: 95
+      memlock: -1
+    oom_score_adj: -700
+    mem_swappiness: 10
+    tmpfs:
+      - /root/.uam:size=500m
+    volumes:
+      - "./entrypoint.sh:/opt/entrypoint.sh"
+    command: /bin/sh -c "chmod +x /opt/entrypoint.sh && /opt/entrypoint.sh $${PBKEY} $${PPORT} $${NETLIMUP} $${NETLIMDOWN}"
+    ports:
+      - "127.0.0.1:17121:17099"
+      - "4181:4181"
+    environment:
+      - PBKEY=${PBKEY}
+      - PPORT=4181
+      - NETLIMUP=10000
+      - NETLIMDOWN=18000
+  uam_23:
+    image: debian:bullseye-slim
+    container_name: uam_23
+    hostname: uam_23
+    restart: always
+    stop_grace_period: 5s
+    cap_add:
+      - NET_ADMIN
+    ulimits:
+      rtprio: 95
+      memlock: -1
+    oom_score_adj: -700
+    mem_swappiness: 10
+    tmpfs:
+      - /root/.uam:size=500m
+    volumes:
+      - "./entrypoint.sh:/opt/entrypoint.sh"
+    command: /bin/sh -c "chmod +x /opt/entrypoint.sh && /opt/entrypoint.sh $${PBKEY} $${PPORT} $${NETLIMUP} $${NETLIMDOWN}"
+    ports:
+      - "127.0.0.1:17122:17099"
+      - "4182:4182"
+    environment:
+      - PBKEY=${PBKEY}
+      - PPORT=4182
+      - NETLIMUP=10000
+      - NETLIMDOWN=18000
+  uam_24:
+    image: debian:bullseye-slim
+    container_name: uam_24
+    hostname: uam_24
+    restart: always
+    stop_grace_period: 5s
+    cap_add:
+      - NET_ADMIN
+    ulimits:
+      rtprio: 95
+      memlock: -1
+    oom_score_adj: -700
+    mem_swappiness: 10
+    tmpfs:
+      - /root/.uam:size=500m
+    volumes:
+      - "./entrypoint.sh:/opt/entrypoint.sh"
+    command: /bin/sh -c "chmod +x /opt/entrypoint.sh && /opt/entrypoint.sh $${PBKEY} $${PPORT} $${NETLIMUP} $${NETLIMDOWN}"
+    ports:
+      - "127.0.0.1:17123:17099"
+      - "4183:4183"
+    environment:
+      - PBKEY=${PBKEY}
+      - PPORT=4183
+      - NETLIMUP=10000
+      - NETLIMDOWN=18000
+  uam_25:
+    image: debian:bullseye-slim
+    container_name: uam_25
+    hostname: uam_25
+    restart: always
+    stop_grace_period: 5s
+    cap_add:
+      - NET_ADMIN
+    ulimits:
+      rtprio: 95
+      memlock: -1
+    oom_score_adj: -700
+    mem_swappiness: 10
+    tmpfs:
+      - /root/.uam:size=500m
+    volumes:
+      - "./entrypoint.sh:/opt/entrypoint.sh"
+    command: /bin/sh -c "chmod +x /opt/entrypoint.sh && /opt/entrypoint.sh $${PBKEY} $${PPORT} $${NETLIMUP} $${NETLIMDOWN}"
+    ports:
+      - "127.0.0.1:17124:17099"
+      - "4184:4184"
+    environment:
+      - PBKEY=${PBKEY}
+      - PPORT=4184
+      - NETLIMUP=10000
+      - NETLIMDOWN=18000
+  uam_26:
+    image: debian:bullseye-slim
+    container_name: uam_26
+    hostname: uam_26
+    restart: always
+    stop_grace_period: 5s
+    cap_add:
+      - NET_ADMIN
+    ulimits:
+      rtprio: 95
+      memlock: -1
+    oom_score_adj: -700
+    mem_swappiness: 10
+    tmpfs:
+      - /root/.uam:size=500m
+    volumes:
+      - "./entrypoint.sh:/opt/entrypoint.sh"
+    command: /bin/sh -c "chmod +x /opt/entrypoint.sh && /opt/entrypoint.sh $${PBKEY} $${PPORT} $${NETLIMUP} $${NETLIMDOWN}"
+    ports:
+      - "127.0.0.1:17125:17099"
+      - "4185:4185"
+    environment:
+      - PBKEY=${PBKEY}
+      - PPORT=4185
+      - NETLIMUP=10000
+      - NETLIMDOWN=18000
+  uam_27:
+    image: debian:bullseye-slim
+    container_name: uam_27
+    hostname: uam_27
+    restart: always
+    stop_grace_period: 5s
+    cap_add:
+      - NET_ADMIN
+    ulimits:
+      rtprio: 95
+      memlock: -1
+    oom_score_adj: -700
+    mem_swappiness: 10
+    tmpfs:
+      - /root/.uam:size=500m
+    volumes:
+      - "./entrypoint.sh:/opt/entrypoint.sh"
+    command: /bin/sh -c "chmod +x /opt/entrypoint.sh && /opt/entrypoint.sh $${PBKEY} $${PPORT} $${NETLIMUP} $${NETLIMDOWN}"
+    ports:
+      - "127.0.0.1:17126:17099"
+      - "4186:4186"
+    environment:
+      - PBKEY=${PBKEY}
+      - PPORT=4186
+      - NETLIMUP=10000
+      - NETLIMDOWN=18000
+  uam_28:
+    image: debian:bullseye-slim
+    container_name: uam_28
+    hostname: uam_28
+    restart: always
+    stop_grace_period: 5s
+    cap_add:
+      - NET_ADMIN
+    ulimits:
+      rtprio: 95
+      memlock: -1
+    oom_score_adj: -700
+    mem_swappiness: 10
+    tmpfs:
+      - /root/.uam:size=500m
+    volumes:
+      - "./entrypoint.sh:/opt/entrypoint.sh"
+    command: /bin/sh -c "chmod +x /opt/entrypoint.sh && /opt/entrypoint.sh $${PBKEY} $${PPORT} $${NETLIMUP} $${NETLIMDOWN}"
+    ports:
+      - "127.0.0.1:17127:17099"
+      - "4187:4187"
+    environment:
+      - PBKEY=${PBKEY}
+      - PPORT=4187
+      - NETLIMUP=10000
+      - NETLIMDOWN=18000
+  uam_29:
+    image: debian:bullseye-slim
+    container_name: uam_29
+    hostname: uam_29
+    restart: always
+    stop_grace_period: 5s
+    cap_add:
+      - NET_ADMIN
+    ulimits:
+      rtprio: 95
+      memlock: -1
+    oom_score_adj: -700
+    mem_swappiness: 10
+    tmpfs:
+      - /root/.uam:size=500m
+    volumes:
+      - "./entrypoint.sh:/opt/entrypoint.sh"
+    command: /bin/sh -c "chmod +x /opt/entrypoint.sh && /opt/entrypoint.sh $${PBKEY} $${PPORT} $${NETLIMUP} $${NETLIMDOWN}"
+    ports:
+      - "127.0.0.1:17128:17099"
+      - "4188:4188"
+    environment:
+      - PBKEY=${PBKEY}
+      - PPORT=4188
+      - NETLIMUP=10000
+      - NETLIMDOWN=18000
+  uam_30:
+    image: debian:bullseye-slim
+    container_name: uam_30
+    hostname: uam_30
+    restart: always
+    stop_grace_period: 5s
+    cap_add:
+      - NET_ADMIN
+    ulimits:
+      rtprio: 95
+      memlock: -1
+    oom_score_adj: -700
+    mem_swappiness: 10
+    tmpfs:
+      - /root/.uam:size=500m
+    volumes:
+      - "./entrypoint.sh:/opt/entrypoint.sh"
+    command: /bin/sh -c "chmod +x /opt/entrypoint.sh && /opt/entrypoint.sh $${PBKEY} $${PPORT} $${NETLIMUP} $${NETLIMDOWN}"
+    ports:
+      - "127.0.0.1:17129:17099"
+      - "4189:4189"
+    environment:
+      - PBKEY=${PBKEY}
+      - PPORT=4189
+      - NETLIMUP=10000
+      - NETLIMDOWN=18000
+  uam_31:
+    image: debian:bullseye-slim
+    container_name: uam_31
+    hostname: uam_31
+    restart: always
+    stop_grace_period: 5s
+    cap_add:
+      - NET_ADMIN
+    ulimits:
+      rtprio: 95
+      memlock: -1
+    oom_score_adj: -700
+    mem_swappiness: 10
+    tmpfs:
+      - /root/.uam:size=500m
+    volumes:
+      - "./entrypoint.sh:/opt/entrypoint.sh"
+    command: /bin/sh -c "chmod +x /opt/entrypoint.sh && /opt/entrypoint.sh $${PBKEY} $${PPORT} $${NETLIMUP} $${NETLIMDOWN}"
+    ports:
+      - "127.0.0.1:17130:17099"
+      - "4190:4190"
+    environment:
+      - PBKEY=${PBKEY}
+      - PPORT=4190
+      - NETLIMUP=10000
+      - NETLIMDOWN=18000
+  uam_32:
+    image: debian:bullseye-slim
+    container_name: uam_32
+    hostname: uam_32
+    restart: always
+    stop_grace_period: 5s
+    cap_add:
+      - NET_ADMIN
+    ulimits:
+      rtprio: 95
+      memlock: -1
+    oom_score_adj: -700
+    mem_swappiness: 10
+    tmpfs:
+      - /root/.uam:size=500m
+    volumes:
+      - "./entrypoint.sh:/opt/entrypoint.sh"
+    command: /bin/sh -c "chmod +x /opt/entrypoint.sh && /opt/entrypoint.sh $${PBKEY} $${PPORT} $${NETLIMUP} $${NETLIMDOWN}"
+    ports:
+      - "127.0.0.1:17131:17099"
+      - "4191:4191"
+    environment:
+      - PBKEY=${PBKEY}
+      - PPORT=4191
+      - NETLIMUP=10000
+      - NETLIMDOWN=18000
+  uam_33:
+    image: debian:bullseye-slim
+    container_name: uam_33
+    hostname: uam_33
+    restart: always
+    stop_grace_period: 5s
+    cap_add:
+      - NET_ADMIN
+    ulimits:
+      rtprio: 95
+      memlock: -1
+    oom_score_adj: -700
+    mem_swappiness: 10
+    tmpfs:
+      - /root/.uam:size=500m
+    volumes:
+      - "./entrypoint.sh:/opt/entrypoint.sh"
+    command: /bin/sh -c "chmod +x /opt/entrypoint.sh && /opt/entrypoint.sh $${PBKEY} $${PPORT} $${NETLIMUP} $${NETLIMDOWN}"
+    ports:
+      - "127.0.0.1:17132:17099"
+      - "4192:4192"
+    environment:
+      - PBKEY=${PBKEY}
+      - PPORT=4192
+      - NETLIMUP=10000
+      - NETLIMDOWN=18000
+  uam_34:
+    image: debian:bullseye-slim
+    container_name: uam_34
+    hostname: uam_34
+    restart: always
+    stop_grace_period: 5s
+    cap_add:
+      - NET_ADMIN
+    ulimits:
+      rtprio: 95
+      memlock: -1
+    oom_score_adj: -700
+    mem_swappiness: 10
+    tmpfs:
+      - /root/.uam:size=500m
+    volumes:
+      - "./entrypoint.sh:/opt/entrypoint.sh"
+    command: /bin/sh -c "chmod +x /opt/entrypoint.sh && /opt/entrypoint.sh $${PBKEY} $${PPORT} $${NETLIMUP} $${NETLIMDOWN}"
+    ports:
+      - "127.0.0.1:17133:17099"
+      - "4193:4193"
+    environment:
+      - PBKEY=${PBKEY}
+      - PPORT=4193
+      - NETLIMUP=10000
+      - NETLIMDOWN=18000
+  uam_35:
+    image: debian:bullseye-slim
+    container_name: uam_35
+    hostname: uam_35
+    restart: always
+    stop_grace_period: 5s
+    cap_add:
+      - NET_ADMIN
+    ulimits:
+      rtprio: 95
+      memlock: -1
+    oom_score_adj: -700
+    mem_swappiness: 10
+    tmpfs:
+      - /root/.uam:size=500m
+    volumes:
+      - "./entrypoint.sh:/opt/entrypoint.sh"
+    command: /bin/sh -c "chmod +x /opt/entrypoint.sh && /opt/entrypoint.sh $${PBKEY} $${PPORT} $${NETLIMUP} $${NETLIMDOWN}"
+    ports:
+      - "127.0.0.1:17134:17099"
+      - "4194:4194"
+    environment:
+      - PBKEY=${PBKEY}
+      - PPORT=4194
+      - NETLIMUP=10000
+      - NETLIMDOWN=18000
+  uam_36:
+    image: debian:bullseye-slim
+    container_name: uam_36
+    hostname: uam_36
+    restart: always
+    stop_grace_period: 5s
+    cap_add:
+      - NET_ADMIN
+    ulimits:
+      rtprio: 95
+      memlock: -1
+    oom_score_adj: -700
+    mem_swappiness: 10
+    tmpfs:
+      - /root/.uam:size=500m
+    volumes:
+      - "./entrypoint.sh:/opt/entrypoint.sh"
+    command: /bin/sh -c "chmod +x /opt/entrypoint.sh && /opt/entrypoint.sh $${PBKEY} $${PPORT} $${NETLIMUP} $${NETLIMDOWN}"
+    ports:
+      - "127.0.0.1:17135:17099"
+      - "4195:4195"
+    environment:
+      - PBKEY=${PBKEY}
+      - PPORT=4195
+      - NETLIMUP=10000
+      - NETLIMDOWN=18000
+  uam_37:
+    image: debian:bullseye-slim
+    container_name: uam_37
+    hostname: uam_37
+    restart: always
+    stop_grace_period: 5s
+    cap_add:
+      - NET_ADMIN
+    ulimits:
+      rtprio: 95
+      memlock: -1
+    oom_score_adj: -700
+    mem_swappiness: 10
+    tmpfs:
+      - /root/.uam:size=500m
+    volumes:
+      - "./entrypoint.sh:/opt/entrypoint.sh"
+    command: /bin/sh -c "chmod +x /opt/entrypoint.sh && /opt/entrypoint.sh $${PBKEY} $${PPORT} $${NETLIMUP} $${NETLIMDOWN}"
+    ports:
+      - "127.0.0.1:17136:17099"
+      - "4196:4196"
+    environment:
+      - PBKEY=${PBKEY}
+      - PPORT=4196
+      - NETLIMUP=10000
+      - NETLIMDOWN=18000
+  uam_38:
+    image: debian:bullseye-slim
+    container_name: uam_38
+    hostname: uam_38
+    restart: always
+    stop_grace_period: 5s
+    cap_add:
+      - NET_ADMIN
+    ulimits:
+      rtprio: 95
+      memlock: -1
+    oom_score_adj: -700
+    mem_swappiness: 10
+    tmpfs:
+      - /root/.uam:size=500m
+    volumes:
+      - "./entrypoint.sh:/opt/entrypoint.sh"
+    command: /bin/sh -c "chmod +x /opt/entrypoint.sh && /opt/entrypoint.sh $${PBKEY} $${PPORT} $${NETLIMUP} $${NETLIMDOWN}"
+    ports:
+      - "127.0.0.1:17137:17099"
+      - "4197:4197"
+    environment:
+      - PBKEY=${PBKEY}
+      - PPORT=4197
+      - NETLIMUP=10000
+      - NETLIMDOWN=18000
+  uam_39:
+    image: debian:bullseye-slim
+    container_name: uam_39
+    hostname: uam_39
+    restart: always
+    stop_grace_period: 5s
+    cap_add:
+      - NET_ADMIN
+    ulimits:
+      rtprio: 95
+      memlock: -1
+    oom_score_adj: -700
+    mem_swappiness: 10
+    tmpfs:
+      - /root/.uam:size=500m
+    volumes:
+      - "./entrypoint.sh:/opt/entrypoint.sh"
+    command: /bin/sh -c "chmod +x /opt/entrypoint.sh && /opt/entrypoint.sh $${PBKEY} $${PPORT} $${NETLIMUP} $${NETLIMDOWN}"
+    ports:
+      - "127.0.0.1:17138:17099"
+      - "4198:4198"
+    environment:
+      - PBKEY=${PBKEY}
+      - PPORT=4198
+      - NETLIMUP=10000
+      - NETLIMDOWN=18000
+  uam_40:
+    image: debian:bullseye-slim
+    container_name: uam_40
+    hostname: uam_40
+    restart: always
+    stop_grace_period: 5s
+    cap_add:
+      - NET_ADMIN
+    ulimits:
+      rtprio: 95
+      memlock: -1
+    oom_score_adj: -700
+    mem_swappiness: 10
+    tmpfs:
+      - /root/.uam:size=500m
+    volumes:
+      - "./entrypoint.sh:/opt/entrypoint.sh"
+    command: /bin/sh -c "chmod +x /opt/entrypoint.sh && /opt/entrypoint.sh $${PBKEY} $${PPORT} $${NETLIMUP} $${NETLIMDOWN}"
+    ports:
+      - "127.0.0.1:17139:17099"
+      - "4199:4199"
+    environment:
+      - PBKEY=${PBKEY}
+      - PPORT=4199
+      - NETLIMUP=10000
+      - NETLIMDOWN=18000
+  uam_41:
+    image: debian:bullseye-slim
+    container_name: uam_41
+    hostname: uam_41
+    restart: always
+    stop_grace_period: 5s
+    cap_add:
+      - NET_ADMIN
+    ulimits:
+      rtprio: 95
+      memlock: -1
+    oom_score_adj: -700
+    mem_swappiness: 10
+    tmpfs:
+      - /root/.uam:size=500m
+    volumes:
+      - "./entrypoint.sh:/opt/entrypoint.sh"
+    command: /bin/sh -c "chmod +x /opt/entrypoint.sh && /opt/entrypoint.sh $${PBKEY} $${PPORT} $${NETLIMUP} $${NETLIMDOWN}"
+    ports:
+      - "127.0.0.1:17140:17099"
+      - "4200:4200"
+    environment:
+      - PBKEY=${PBKEY}
+      - PPORT=4200
+      - NETLIMUP=10000
+      - NETLIMDOWN=18000
+  uam_42:
+    image: debian:bullseye-slim
+    container_name: uam_42
+    hostname: uam_42
+    restart: always
+    stop_grace_period: 5s
+    cap_add:
+      - NET_ADMIN
+    ulimits:
+      rtprio: 95
+      memlock: -1
+    oom_score_adj: -700
+    mem_swappiness: 10
+    tmpfs:
+      - /root/.uam:size=500m
+    volumes:
+      - "./entrypoint.sh:/opt/entrypoint.sh"
+    command: /bin/sh -c "chmod +x /opt/entrypoint.sh && /opt/entrypoint.sh $${PBKEY} $${PPORT} $${NETLIMUP} $${NETLIMDOWN}"
+    ports:
+      - "127.0.0.1:17141:17099"
+      - "4201:4201"
+    environment:
+      - PBKEY=${PBKEY}
+      - PPORT=4201
+      - NETLIMUP=10000
+      - NETLIMDOWN=18000
+  uam_43:
+    image: debian:bullseye-slim
+    container_name: uam_43
+    hostname: uam_43
+    restart: always
+    stop_grace_period: 5s
+    cap_add:
+      - NET_ADMIN
+    ulimits:
+      rtprio: 95
+      memlock: -1
+    oom_score_adj: -700
+    mem_swappiness: 10
+    tmpfs:
+      - /root/.uam:size=500m
+    volumes:
+      - "./entrypoint.sh:/opt/entrypoint.sh"
+    command: /bin/sh -c "chmod +x /opt/entrypoint.sh && /opt/entrypoint.sh $${PBKEY} $${PPORT} $${NETLIMUP} $${NETLIMDOWN}"
+    ports:
+      - "127.0.0.1:17142:17099"
+      - "4202:4202"
+    environment:
+      - PBKEY=${PBKEY}
+      - PPORT=4202
+      - NETLIMUP=10000
+      - NETLIMDOWN=18000
+  uam_44:
+    image: debian:bullseye-slim
+    container_name: uam_44
+    hostname: uam_44
+    restart: always
+    stop_grace_period: 5s
+    cap_add:
+      - NET_ADMIN
+    ulimits:
+      rtprio: 95
+      memlock: -1
+    oom_score_adj: -700
+    mem_swappiness: 10
+    tmpfs:
+      - /root/.uam:size=500m
+    volumes:
+      - "./entrypoint.sh:/opt/entrypoint.sh"
+    command: /bin/sh -c "chmod +x /opt/entrypoint.sh && /opt/entrypoint.sh $${PBKEY} $${PPORT} $${NETLIMUP} $${NETLIMDOWN}"
+    ports:
+      - "127.0.0.1:17143:17099"
+      - "4203:4203"
+    environment:
+      - PBKEY=${PBKEY}
+      - PPORT=4203
+      - NETLIMUP=10000
+      - NETLIMDOWN=18000
+  uam_45:
+    image: debian:bullseye-slim
+    container_name: uam_45
+    hostname: uam_45
+    restart: always
+    stop_grace_period: 5s
+    cap_add:
+      - NET_ADMIN
+    ulimits:
+      rtprio: 95
+      memlock: -1
+    oom_score_adj: -700
+    mem_swappiness: 10
+    tmpfs:
+      - /root/.uam:size=500m
+    volumes:
+      - "./entrypoint.sh:/opt/entrypoint.sh"
+    command: /bin/sh -c "chmod +x /opt/entrypoint.sh && /opt/entrypoint.sh $${PBKEY} $${PPORT} $${NETLIMUP} $${NETLIMDOWN}"
+    ports:
+      - "127.0.0.1:17144:17099"
+      - "4204:4204"
+    environment:
+      - PBKEY=${PBKEY}
+      - PPORT=4204
+      - NETLIMUP=10000
+      - NETLIMDOWN=18000
+  uam_46:
+    image: debian:bullseye-slim
+    container_name: uam_46
+    hostname: uam_46
+    restart: always
+    stop_grace_period: 5s
+    cap_add:
+      - NET_ADMIN
+    ulimits:
+      rtprio: 95
+      memlock: -1
+    oom_score_adj: -700
+    mem_swappiness: 10
+    tmpfs:
+      - /root/.uam:size=500m
+    volumes:
+      - "./entrypoint.sh:/opt/entrypoint.sh"
+    command: /bin/sh -c "chmod +x /opt/entrypoint.sh && /opt/entrypoint.sh $${PBKEY} $${PPORT} $${NETLIMUP} $${NETLIMDOWN}"
+    ports:
+      - "127.0.0.1:17145:17099"
+      - "4205:4205"
+    environment:
+      - PBKEY=${PBKEY}
+      - PPORT=4205
+      - NETLIMUP=10000
+      - NETLIMDOWN=18000
+  uam_47:
+    image: debian:bullseye-slim
+    container_name: uam_47
+    hostname: uam_47
+    restart: always
+    stop_grace_period: 5s
+    cap_add:
+      - NET_ADMIN
+    ulimits:
+      rtprio: 95
+      memlock: -1
+    oom_score_adj: -700
+    mem_swappiness: 10
+    tmpfs:
+      - /root/.uam:size=500m
+    volumes:
+      - "./entrypoint.sh:/opt/entrypoint.sh"
+    command: /bin/sh -c "chmod +x /opt/entrypoint.sh && /opt/entrypoint.sh $${PBKEY} $${PPORT} $${NETLIMUP} $${NETLIMDOWN}"
+    ports:
+      - "127.0.0.1:17146:17099"
+      - "4206:4206"
+    environment:
+      - PBKEY=${PBKEY}
+      - PPORT=4206
+      - NETLIMUP=10000
+      - NETLIMDOWN=18000
+  uam_48:
+    image: debian:bullseye-slim
+    container_name: uam_48
+    hostname: uam_48
+    restart: always
+    stop_grace_period: 5s
+    cap_add:
+      - NET_ADMIN
+    ulimits:
+      rtprio: 95
+      memlock: -1
+    oom_score_adj: -700
+    mem_swappiness: 10
+    tmpfs:
+      - /root/.uam:size=500m
+    volumes:
+      - "./entrypoint.sh:/opt/entrypoint.sh"
+    command: /bin/sh -c "chmod +x /opt/entrypoint.sh && /opt/entrypoint.sh $${PBKEY} $${PPORT} $${NETLIMUP} $${NETLIMDOWN}"
+    ports:
+      - "127.0.0.1:17147:17099"
+      - "4207:4207"
+    environment:
+      - PBKEY=${PBKEY}
+      - PPORT=4207
+      - NETLIMUP=10000
+      - NETLIMDOWN=18000
+  uam_49:
+    image: debian:bullseye-slim
+    container_name: uam_49
+    hostname: uam_49
+    restart: always
+    stop_grace_period: 5s
+    cap_add:
+      - NET_ADMIN
+    ulimits:
+      rtprio: 95
+      memlock: -1
+    oom_score_adj: -700
+    mem_swappiness: 10
+    tmpfs:
+      - /root/.uam:size=500m
+    volumes:
+      - "./entrypoint.sh:/opt/entrypoint.sh"
+    command: /bin/sh -c "chmod +x /opt/entrypoint.sh && /opt/entrypoint.sh $${PBKEY} $${PPORT} $${NETLIMUP} $${NETLIMDOWN}"
+    ports:
+      - "127.0.0.1:17148:17099"
+      - "4208:4208"
+    environment:
+      - PBKEY=${PBKEY}
+      - PPORT=4208
+      - NETLIMUP=10000
+      - NETLIMDOWN=18000
+  uam_50:
+    image: debian:bullseye-slim
+    container_name: uam_50
+    hostname: uam_50
+    restart: always
+    stop_grace_period: 5s
+    cap_add:
+      - NET_ADMIN
+    ulimits:
+      rtprio: 95
+      memlock: -1
+    oom_score_adj: -700
+    mem_swappiness: 10
+    tmpfs:
+      - /root/.uam:size=500m
+    volumes:
+      - "./entrypoint.sh:/opt/entrypoint.sh"
+    command: /bin/sh -c "chmod +x /opt/entrypoint.sh && /opt/entrypoint.sh $${PBKEY} $${PPORT} $${NETLIMUP} $${NETLIMDOWN}"
+    ports:
+      - "127.0.0.1:17149:17099"
+      - "4209:4209"
+    environment:
+      - PBKEY=${PBKEY}
+      - PPORT=4209
+      - NETLIMUP=10000
+      - NETLIMDOWN=18000
+  uam_51:
+    image: debian:bullseye-slim
+    container_name: uam_51
+    hostname: uam_51
+    restart: always
+    stop_grace_period: 5s
+    cap_add:
+      - NET_ADMIN
+    ulimits:
+      rtprio: 95
+      memlock: -1
+    oom_score_adj: -700
+    mem_swappiness: 10
+    tmpfs:
+      - /root/.uam:size=500m
+    volumes:
+      - "./entrypoint.sh:/opt/entrypoint.sh"
+    command: /bin/sh -c "chmod +x /opt/entrypoint.sh && /opt/entrypoint.sh $${PBKEY} $${PPORT} $${NETLIMUP} $${NETLIMDOWN}"
+    ports:
+      - "127.0.0.1:17150:17099"
+      - "4210:4210"
+    environment:
+      - PBKEY=${PBKEY}
+      - PPORT=4210
+      - NETLIMUP=10000
+      - NETLIMDOWN=18000
