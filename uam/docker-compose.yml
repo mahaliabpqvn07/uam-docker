@@ -1,0 +1,24 @@
+version: '2.2'
+
+services:
+  uam:
+    image: debian:bullseye-slim
+    container_name: uam
+    hostname: uam
+    restart: always
+    ulimits:
+      memlock: -1
+    cap_add:
+      - NET_ADMIN
+    volumes:
+      - "./entrypoint.sh:/opt/entrypoint.sh"
+      - "/opt/uam_data/uam:/root/.uam"
+    command: /bin/sh -c "chmod +x /opt/entrypoint.sh && /opt/entrypoint.sh $${PBKEY} $${PPORT} $${NETLIMUP} $${NETLIMDOWN}"
+    ports:
+      - "127.0.0.1:18100:17099"
+      - "4260:4260"
+    environment:
+      - PBKEY=${PBKEY}
+      - PPORT=4260
+      - NETLIMUP=10000
+      - NETLIMDOWN=18000
