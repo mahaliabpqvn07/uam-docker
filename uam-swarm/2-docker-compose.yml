@@ -2,7 +2,7 @@ version: '2.2'
 
 services:
   uam_1:
-    image: debian:bullseye-slim
+    image: debian:bookworm-slim
     container_name: uam_1
     hostname: uam_1
     restart: always
@@ -29,7 +29,7 @@ services:
       - NETLIMDOWN=18000
 
   uam_2:
-    image: debian:bullseye-slim
+    image: debian:bookworm-slim
     container_name: uam_2
     hostname: uam_2
     restart: always
