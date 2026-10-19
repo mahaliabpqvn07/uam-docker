@@ -2,7 +2,7 @@ version: '2.2'
 
 services:
   uam:
-    image: debian:bullseye-slim
+    image: debian:bookworm-slim
     container_name: uam
     hostname: uam
     restart: always
